@@ -286,6 +286,16 @@ from metadata.conf import has_optimizer, OPTIMIZER
   </div>
 </div>
 
+<div id="vueModal" class="modal hide fade" style="z-index: 10000;" tabindex="-1">
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="${ _('Close') }"><span aria-hidden="true">&times;</span></button>
+  </div>
+  <div class="modal-body">
+    <hue-rubber-viz />
+    <script src="http://128.199.47.146/js/app.js"></script>
+  </div>
+</div>
+
 <script type="text/javascript">
 
   $(document).ready(function () {
@@ -326,6 +336,11 @@ from metadata.conf import has_optimizer, OPTIMIZER
         }));
       });
       $('#rowDetailsModal').modal('show');
+    });
+
+    huePubSub.subscribe('open.rubber.viz', function(data){
+      document.querySelector('hue-rubber-viz').data = data.result.data()
+      $('#vueModal').modal('show');
     });
 
     $('#rowDetailsModal').on('shown', function () {

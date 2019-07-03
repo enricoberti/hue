@@ -1947,6 +1947,12 @@ ${ sqlSyntaxDropdown.sqlSyntaxDropdown() }
     % if conf.ENABLE_DOWNLOAD.get() and not IS_EMBEDDED.get():
     <div data-bind="component: { name: 'downloadSnippetResults', params: { gridSideBtn: false, snippet: $data, notebook: $parent } }" style="display:inline-block;"></div>
     % endif
+
+    <div>
+      <a class="snippet-side-btn" href="javascript:void(0)" data-bind="click: function(){ huePubSub.publish('open.rubber.viz', $data);}" title="${ _('Open Viz App') }">
+        <i class="fa fa-fw fa-s15"></i>
+      </a>
+    </div>
   </div>
 </script>
 

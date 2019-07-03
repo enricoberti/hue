@@ -98,6 +98,7 @@
   <link rel="stylesheet" href="${ static('desktop/ext/css/leaflet.zoombox.css') }">
   <link rel="stylesheet" href="${ static('desktop/ext/css/nv.d3.min.css') }">
   <link rel="stylesheet" href="${ static('desktop/css/nv.d3.css') }">
+  <link rel="stylesheet" href="http://128.199.47.146/css/app.css">
 
   <script type="text/javascript">
 % if IS_EMBEDDED.get():
